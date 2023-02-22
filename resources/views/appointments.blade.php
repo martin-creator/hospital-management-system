@@ -22,7 +22,10 @@
                             <td>You cannot book right now, slot is taken!</td>
                         @else:
                             <td>
-                                <form>
+                                <form method="post" action="{{ route('bookAppointment')}}">
+                                    <input type="text" value="{{$appointment->id}}" name="appointment_id">
+                                    <input type="text" value="{{$appointment->department_name}}" name="appointment_name">
+                                    <input type="text" value="{{$appointment->appointment_date}}" name="appointment_date">
                                     <input type="submit" value="book" class="btn btn-primary">
                                 </form>
                             </td>

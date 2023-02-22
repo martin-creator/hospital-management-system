@@ -18,6 +18,8 @@ Route::get('/', [ProjectController::class, 'getAllDepartments']);
 // Route::get('/user', [UserController::class, 'index']);
 Route::post('/showAppointments', [ProjectController::class, 'showAppointments'])->name('showAppointments');
 
+Route::post('/bookAppointment', [ProjectController::class, 'bookAppointment'])->name('bookAppointment');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
