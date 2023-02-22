@@ -12,6 +12,7 @@
                             <div class="card-text"> {{ $department->description }} </div>
                         </div>
                         <form method="post" action="{{ route('showAppointments') }}" class="mt-2">
+                            @csrf
                             <input type="text" name="department_id" value="{{ $department->id }}" style="display:none;">
                             <input type="submit" value="show appointments" class="btn btn-primary">
                         </form>
