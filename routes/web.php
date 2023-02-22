@@ -16,9 +16,9 @@ use App\Http\Controllers\ProjectController;
 
 Route::get('/', [ProjectController::class, 'getAllDepartments']);
 // Route::get('/user', [UserController::class, 'index']);
-Route::post('/showAppointments', [ProjectController::class, 'showAppointments'])->name('showAppointments');
+Route::post('/showAppointments', [ProjectController::class, 'showAppointments'])->name('showAppointments')->middleware('auth');
 
-Route::post('/bookAppointment', [ProjectController::class, 'bookAppointment'])->name('bookAppointment');
+Route::post('/bookAppointment', [ProjectController::class, 'bookAppointment'])->name('bookAppointment')->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',
