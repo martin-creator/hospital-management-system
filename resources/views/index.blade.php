@@ -6,7 +6,7 @@
         @foreach ($departments as $department)
         <div class="col-lg-4 col-md-4 col-sm-12 text-center mb-3">
             <div class="card" style="width: 18rem">
-                <img  src="{{$department->image}}" style="width:200px;"/>
+                <img  src="{{$department->image}}" style="width:200px; margin: 0 auto;"/>
                 <div class="card-body">
                     <div class="card-title"> {{ $department->name}} </div>
                     <div class="card-text"> {{$department->description}} </div>
