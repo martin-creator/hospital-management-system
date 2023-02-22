@@ -11,6 +11,10 @@
                             <div class="card-title"> {{ $department->name }} </div>
                             <div class="card-text"> {{ $department->description }} </div>
                         </div>
+                        <form method="post" action="{{ route('showAppointments') }}" class="mt-2">
+                            <input type="text" value="{{ $department->id }}" style="display:none;">
+                            <input type="submit" value="show appointments" class="btn btn-primary">
+                        </form>
                     </div>
                 </div>
             @endforeach
