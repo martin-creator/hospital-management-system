@@ -17,3 +17,5 @@ class ProjectController extends Controller
         return view('index', ['departments'=>$departments]);
     }
 }
+
+
