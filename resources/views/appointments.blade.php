@@ -23,9 +23,10 @@
                         @else:
                             <td>
                                 <form method="post" action="{{ route('bookAppointment')}}">
-                                    <input type="text" value="{{$appointment->id}}" name="appointment_id">
-                                    <input type="text" value="{{$appointment->department_name}}" name="appointment_name">
-                                    <input type="text" value="{{$appointment->appointment_date}}" name="appointment_date">
+                                    @csrf
+                                    <input type="text" value="{{$appointment->id}}" name="appointment_id" style="display:none;">
+                                    <input type="text" value="{{$appointment->department_name}}" name="department_name" style="display:none;">
+                                    <input type="text" value="{{$appointment->appointment_date}}" name="appointment_date" style="display:none;">
                                     <input type="submit" value="book" class="btn btn-primary">
                                 </form>
                             </td>

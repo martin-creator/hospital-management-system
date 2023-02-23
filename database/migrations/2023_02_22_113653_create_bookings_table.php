@@ -18,7 +18,7 @@ class CreateBookingsTable extends Migration
             $table->string('username');
             $table->integer('user_id');
             $table->integer('appointment_id');
-            $table->integer('department_name');
+            $table->string('department_name');
             $table->dateTime('appointment_date');
             $table->timestamps();
         });

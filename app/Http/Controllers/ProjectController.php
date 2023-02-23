@@ -7,6 +7,7 @@ use App\Models\Booking;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class ProjectController extends Controller
@@ -29,6 +30,7 @@ class ProjectController extends Controller
     }
 
     public function bookAppointment(Request $request){
+        info($request);
         $appointment_id = $request->input('appointment_id');
         $department_name = $request->input('department_name');
         $appointment_date = $request->input('appointment_date');
@@ -41,11 +43,15 @@ class ProjectController extends Controller
             return redirect('/');
         }else{
             $booking = new Booking;
+
+
             $booking->appointment_id = $appointment_id;
             $booking->department_name = $department_name;
             $booking->appointment_date = $appointment_date;
             $booking->username = Auth::user()->name;
-            $booking->user_id = Auth::user()->user_id;
+            $booking->user_id = Auth::user()->id;
+
+            info($booking);
 
             $booking->save();
 
