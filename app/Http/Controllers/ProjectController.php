@@ -30,7 +30,7 @@ class ProjectController extends Controller
     }
 
     public function bookAppointment(Request $request){
-        info($request);
+        // info($request);
         $appointment_id = $request->input('appointment_id');
         $department_name = $request->input('department_name');
         $appointment_date = $request->input('appointment_date');
@@ -51,9 +51,12 @@ class ProjectController extends Controller
             $booking->username = Auth::user()->name;
             $booking->user_id = Auth::user()->id;
 
-            info($booking);
+            // info($booking);
 
             $booking->save();
+
+            //change appointment status
+            Appointment::where('id', $appointment_id)->update(['status'=>1]);
 
             Session::flash('message', 'Appointment is successfully booked!');
             Session::flash('alert-class', 'alert-success');
