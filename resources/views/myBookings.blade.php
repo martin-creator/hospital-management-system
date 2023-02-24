@@ -10,6 +10,7 @@
                     <th scope="col">Appointment id</th>
                     <th scope="col">Department name</th>
                     <th scope="col">Appointment Date</th>
+                    <th> Want to cancel</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                         <th scope="row">{{ $booking->appointment_id }}</th>
                         <td>{{ $booking->department_name }}</td>
                         <td> {{ $booking->appointment_date }}</td>
+                        <td>Please call 0765434231</td>
                     </tr>
                 @endforeach
             </tbody>
