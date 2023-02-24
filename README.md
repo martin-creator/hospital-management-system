@@ -8,6 +8,14 @@ Simple overview of use/purpose.
 
 An in-depth paragraph about your project and overview of use.
 
+## Screenshots
+
+![photo](./LH%20Images/1.png)
+![photo](./LH%20Images/2.png)
+![photo](./LH%20Images/3.png)
+![photo](./LH%20Images/4.png)
+
+
 ## Getting Started
 
 ### Dependencies
