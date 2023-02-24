@@ -1,3 +1,5 @@
+![Imgur](https://i.imgur.com/FA2cICX.png)
+
 # Project Title
 
 Simple overview of use/purpose.
