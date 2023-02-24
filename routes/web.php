@@ -22,6 +22,8 @@ Route::post('/bookAppointment', [ProjectController::class, 'bookAppointment'])->
 
 Route::get('/myBookings', [ProjectController::class, 'myBookings'])->name('myBookings')->middleware('auth');
 
+Route::post('/cancelBooking', [ProjectController::class, 'cancelBooking'])->name('cancelBooking')->middleware('auth');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

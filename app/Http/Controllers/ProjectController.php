@@ -70,6 +70,20 @@ class ProjectController extends Controller
         $bookings = Booking::where('user_id', Auth::user()->id)->get();
         return view('myBookings', ['bookings'=>$bookings]);
     }
+
+    public function cancelBooking(Request $request){
+        $booking_id = $request->input('booking_id');
+        $appointment_id = $request->input('appointment_id');
+        $booking = Booking::where('id', $booking_id)->delete();
+
+        Appointment::where('id', $appointment_id)->update(['status'=>0]);
+
+        Session::flash('message', 'Appointment is successfully deleted!');
+        Session::flash('alert-class', 'alert-success');
+
+        return redirect('/');
+
+    }
 }
 
 

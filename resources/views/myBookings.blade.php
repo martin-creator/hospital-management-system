@@ -20,7 +20,15 @@
                         <th scope="row">{{ $booking->appointment_id }}</th>
                         <td>{{ $booking->department_name }}</td>
                         <td> {{ $booking->appointment_date }}</td>
-                        <td>Please call 0765434231</td>
+                        {{-- <td>Please call 0765434231</td> --}}
+                        <td>
+                            <form method="post" action="{{ route('cancelBooking')}}">
+                                @csrf
+                                <input type="hidden" value="{{$booking->id}}" name="booking_id" >
+                                <input type="hidden" value="{{$booking->appointment_id}}" name="appointment_id" >
+                                <input type="submit"  value="cancel" class="btn btn-danger">
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
