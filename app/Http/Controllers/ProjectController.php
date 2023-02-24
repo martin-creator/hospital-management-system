@@ -65,6 +65,11 @@ class ProjectController extends Controller
 
         }
     }
+
+    public function myBookings(Request $request){
+        $bookings = Booking::where('user_id', Auth::user()->id)->get();
+        return view('myBookings', ['bookings'=>$bookings]);
+    }
 }
 
 

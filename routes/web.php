@@ -20,6 +20,8 @@ Route::post('/showAppointments', [ProjectController::class, 'showAppointments'])
 
 Route::post('/bookAppointment', [ProjectController::class, 'bookAppointment'])->name('bookAppointment')->middleware('auth');
 
+Route::get('/myBookings', [ProjectController::class, 'myBookings'])->name('myBookings')->middleware('auth');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
